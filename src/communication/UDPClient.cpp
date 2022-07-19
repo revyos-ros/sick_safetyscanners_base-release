@@ -56,6 +56,7 @@ namespace communication {
 using boost::asio::deadline_timer;
 using boost::asio::ip::tcp;
 using boost::lambda::_1;
+using boost::lambda::_2;
 using boost::lambda::bind;
 using boost::lambda::var;
 
