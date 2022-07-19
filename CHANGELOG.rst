@@ -2,6 +2,11 @@
 Changelog for package sick_safetyscanners_base
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+1.0.2 (2022-07-19)
+------------------
+* Added missing 'using' statement to UDPClient.cpp
+* Contributors: Lennart Puck, crown-bdee
+
 1.0.1 (2021-12-22)
 ------------------
 * Merge fix for memory leak in command execution
