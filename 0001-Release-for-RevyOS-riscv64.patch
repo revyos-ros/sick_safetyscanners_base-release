@@ -1,0 +1,173 @@
+From fe82350fbd0ca2cc143910449f547ab2290a0955 Mon Sep 17 00:00:00 2001
+From: CHEN Xuan <chenxuan@iscas.ac.cn>
+Date: Fri, 7 Jun 2024 11:34:33 +0800
+Subject: [PATCH] Release for RevyOS riscv64
+
+* Add compile option -Wno-error=pessimizing-move
+* Add <cstdint> header
+
+https://github.com/SICKAG/sick_safetyscanners_base/pull/30
+
+Signed-off-by: CHEN Xuan <chenxuan@iscas.ac.cn>
+---
+ debian/patches/01-add-cstdint-header.patch | 125 +++++++++++++++++++++
+ debian/patches/series                      |   1 +
+ debian/rules.em                            |   2 +-
+ 3 files changed, 127 insertions(+), 1 deletion(-)
+ create mode 100644 debian/patches/01-add-cstdint-header.patch
+ create mode 100644 debian/patches/series
+
+diff --git a/debian/patches/01-add-cstdint-header.patch b/debian/patches/01-add-cstdint-header.patch
+new file mode 100644
+index 0000000..ce5268a
+--- /dev/null
++++ b/debian/patches/01-add-cstdint-header.patch
+@@ -0,0 +1,125 @@
++From acc5192661f6d80d855c04f6f416b13fee2571b0 Mon Sep 17 00:00:00 2001
++From: ruffsl <roxfoxpox@gmail.com>
++Date: Wed, 29 May 2024 15:36:22 -0500
++Subject: [PATCH] Add missing cstdint header to define uint8_t
++
++---
++ include/sick_safetyscanners_base/datastructure/ApplicationName.h | 1 +
++ include/sick_safetyscanners_base/datastructure/ConfigMetadata.h  | 1 +
++ include/sick_safetyscanners_base/datastructure/DeviceStatus.h    | 1 +
++ include/sick_safetyscanners_base/datastructure/FieldData.h       | 1 +
++ include/sick_safetyscanners_base/datastructure/FieldSets.h       | 1 +
++ .../sick_safetyscanners_base/datastructure/MonitoringCaseData.h  | 1 +
++ include/sick_safetyscanners_base/datastructure/StatusOverview.h  | 1 +
++ include/sick_safetyscanners_base/datastructure/TypeCode.h        | 1 +
++ include/sick_safetyscanners_base/datastructure/UserName.h        | 1 +
++ 9 files changed, 9 insertions(+)
++
++diff --git a/include/sick_safetyscanners_base/datastructure/ApplicationName.h b/include/sick_safetyscanners_base/datastructure/ApplicationName.h
++index a2a1a2a..8d6c799 100644
++--- a/include/sick_safetyscanners_base/datastructure/ApplicationName.h
+++++ b/include/sick_safetyscanners_base/datastructure/ApplicationName.h
++@@ -35,6 +35,7 @@
++ #ifndef SICK_SAFETYSCANNERS_BASE_DATASTRUCTURE_APPLICATIONNAME_H
++ #define SICK_SAFETYSCANNERS_BASE_DATASTRUCTURE_APPLICATIONNAME_H
++ 
+++#include <cstdint>
++ #include <iostream>
++ 
++ 
++diff --git a/include/sick_safetyscanners_base/datastructure/ConfigMetadata.h b/include/sick_safetyscanners_base/datastructure/ConfigMetadata.h
++index 5046e11..d8de012 100644
++--- a/include/sick_safetyscanners_base/datastructure/ConfigMetadata.h
+++++ b/include/sick_safetyscanners_base/datastructure/ConfigMetadata.h
++@@ -35,6 +35,7 @@
++ #ifndef SICK_SAFETYSCANNERS_BASE_DATASTRUCTURE_CONFIGMETADATA_H
++ #define SICK_SAFETYSCANNERS_BASE_DATASTRUCTURE_CONFIGMETADATA_H
++ 
+++#include <cstdint>
++ #include <iostream>
++ #include <vector>
++ 
++diff --git a/include/sick_safetyscanners_base/datastructure/DeviceStatus.h b/include/sick_safetyscanners_base/datastructure/DeviceStatus.h
++index 870feed..a62f4a5 100644
++--- a/include/sick_safetyscanners_base/datastructure/DeviceStatus.h
+++++ b/include/sick_safetyscanners_base/datastructure/DeviceStatus.h
++@@ -35,6 +35,7 @@
++ #ifndef SICK_SAFETYSCANNERS_BASE_DATASTRUCTURE_DEVICESTATUS_H
++ #define SICK_SAFETYSCANNERS_BASE_DATASTRUCTURE_DEVICESTATUS_H
++ 
+++#include <cstdint>
++ #include <iostream>
++ 
++ 
++diff --git a/include/sick_safetyscanners_base/datastructure/FieldData.h b/include/sick_safetyscanners_base/datastructure/FieldData.h
++index 684f0a1..0cd1eb0 100644
++--- a/include/sick_safetyscanners_base/datastructure/FieldData.h
+++++ b/include/sick_safetyscanners_base/datastructure/FieldData.h
++@@ -35,6 +35,7 @@
++ #ifndef SICK_SAFETYSCANNERS_BASE_DATASTRUCTURE_FIELDDATA_H
++ #define SICK_SAFETYSCANNERS_BASE_DATASTRUCTURE_FIELDDATA_H
++ 
+++#include <cstdint>
++ #include <iostream>
++ #include <vector>
++ 
++diff --git a/include/sick_safetyscanners_base/datastructure/FieldSets.h b/include/sick_safetyscanners_base/datastructure/FieldSets.h
++index 0d91f7e..ab29dee 100644
++--- a/include/sick_safetyscanners_base/datastructure/FieldSets.h
+++++ b/include/sick_safetyscanners_base/datastructure/FieldSets.h
++@@ -35,6 +35,7 @@
++ #ifndef SICK_SAFETYSCANNERS_BASE_DATASTRUCTURE_FIELDSETS_H
++ #define SICK_SAFETYSCANNERS_BASE_DATASTRUCTURE_FIELDSETS_H
++ 
+++#include <cstdint>
++ #include <iostream>
++ #include <vector>
++ 
++diff --git a/include/sick_safetyscanners_base/datastructure/MonitoringCaseData.h b/include/sick_safetyscanners_base/datastructure/MonitoringCaseData.h
++index a8a4fe8..a0b96fd 100644
++--- a/include/sick_safetyscanners_base/datastructure/MonitoringCaseData.h
+++++ b/include/sick_safetyscanners_base/datastructure/MonitoringCaseData.h
++@@ -35,6 +35,7 @@
++ #ifndef SICK_SAFETYSCANNERS_BASE_DATASTRUCTURE_MONITORINGCASEDATA_H
++ #define SICK_SAFETYSCANNERS_BASE_DATASTRUCTURE_MONITORINGCASEDATA_H
++ 
+++#include <cstdint>
++ #include <iostream>
++ #include <vector>
++ 
++diff --git a/include/sick_safetyscanners_base/datastructure/StatusOverview.h b/include/sick_safetyscanners_base/datastructure/StatusOverview.h
++index c43c185..b3f9fc0 100644
++--- a/include/sick_safetyscanners_base/datastructure/StatusOverview.h
+++++ b/include/sick_safetyscanners_base/datastructure/StatusOverview.h
++@@ -35,6 +35,7 @@
++ #ifndef SICK_SAFETYSCANNERS_BASE_DATASTRUCTURE_STATUSOVERVIEW_H
++ #define SICK_SAFETYSCANNERS_BASE_DATASTRUCTURE_STATUSOVERVIEW_H
++ 
+++#include <cstdint>
++ #include <iostream>
++ 
++ 
++diff --git a/include/sick_safetyscanners_base/datastructure/TypeCode.h b/include/sick_safetyscanners_base/datastructure/TypeCode.h
++index 4ba2d45..c249ef7 100644
++--- a/include/sick_safetyscanners_base/datastructure/TypeCode.h
+++++ b/include/sick_safetyscanners_base/datastructure/TypeCode.h
++@@ -35,6 +35,7 @@
++ #ifndef SICK_SAFETYSCANNERS_BASE_DATASTRUCTURE_TYPECODE_H
++ #define SICK_SAFETYSCANNERS_BASE_DATASTRUCTURE_TYPECODE_H
++ 
+++#include <cstdint>
++ #include <iostream>
++ 
++ namespace sick {
++diff --git a/include/sick_safetyscanners_base/datastructure/UserName.h b/include/sick_safetyscanners_base/datastructure/UserName.h
++index b34d558..cc2ac36 100644
++--- a/include/sick_safetyscanners_base/datastructure/UserName.h
+++++ b/include/sick_safetyscanners_base/datastructure/UserName.h
++@@ -35,6 +35,7 @@
++ #ifndef SICK_SAFETYSCANNERS_BASE_DATASTRUCTURE_USERNAME_H
++ #define SICK_SAFETYSCANNERS_BASE_DATASTRUCTURE_USERNAME_H
++ 
+++#include <cstdint>
++ #include <iostream>
++ 
++ 
+diff --git a/debian/patches/series b/debian/patches/series
+new file mode 100644
+index 0000000..13e2d77
+--- /dev/null
++++ b/debian/patches/series
+@@ -0,0 +1 @@
++01-add-cstdint-header.patch
+diff --git a/debian/rules.em b/debian/rules.em
+index 284a071..dfe1330 100755
+--- a/debian/rules.em
++++ b/debian/rules.em
+@@ -16,7 +16,7 @@ export LDFLAGS=
+ export PKG_CONFIG_PATH=@(InstallationPrefix)/lib/pkgconfig
+ # Explicitly enable -DNDEBUG, see:
+ # 	https://github.com/ros-infrastructure/bloom/issues/327
+-export DEB_CXXFLAGS_MAINT_APPEND=-DNDEBUG
++export DEB_CXXFLAGS_MAINT_APPEND=-DNDEBUG -Wno-error=pessimizing-move
+ ifneq ($(filter nocheck,$(DEB_BUILD_OPTIONS)),)
+ 	BUILD_TESTING_ARG=-DBUILD_TESTING=OFF
+ endif
+-- 
+2.34.1
+
