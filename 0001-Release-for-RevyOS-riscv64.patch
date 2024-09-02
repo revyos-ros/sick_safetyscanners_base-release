@@ -1,4 +1,4 @@
-From a97c2a6defd0e87712f49110713f0c3accb326b2 Mon Sep 17 00:00:00 2001
+From 58389c67efd8ce18796c68b16ce3c7e8cec1f5d1 Mon Sep 17 00:00:00 2001
 From: CHEN Xuan <chenxuan@iscas.ac.cn>
 Date: Fri, 7 Jun 2024 11:34:33 +0800
 Subject: [PATCH] Release for RevyOS riscv64
@@ -169,5 +169,5 @@ index 284a071..dfe1330 100755
  	BUILD_TESTING_ARG=-DBUILD_TESTING=OFF
  endif
 -- 
-2.34.1
+2.45.2
 
