@@ -1,3 +1,26 @@
+## sick_safetyscanners_base (jazzy) - 1.0.3-1
+
+The packages in the `sick_safetyscanners_base` repository were released into the `jazzy` distro by running `/home/z572/gits/revyos-ros/venv2/bin/bloom-release -r jazzy sick_safetyscanners_base --override-release-repository-push-url git@github.com:revyos-ros/sick_safetyscanners_base-release.git` on `Sun, 29 Sep 2024 02:20:43 -0000`
+
+The `sick_safetyscanners_base` package was released.
+
+Version of package(s) in repository `sick_safetyscanners_base`:
+
+- upstream repository: https://github.com/SICKAG/sick_safetyscanners_base.git
+- release repository: https://github.com/revyos-ros/sick_safetyscanners_base-release.git
+- rosdistro version: `1.0.3-1`
+- old version: `null`
+- new version: `1.0.3-1`
+
+Versions of tools used:
+
+- bloom version: `0.12.0`
+- catkin_pkg version: `1.0.0`
+- rosdep version: `0.22.2`
+- rosdistro version: `0.9.0`
+- vcstools version: `0.1.42`
+
+
 ## sick_safetyscanners_base (humble) - 1.0.3-1
 
 The packages in the `sick_safetyscanners_base` repository were released into the `humble` distro by running `/home/z572/gits/revyos-ros/venv2/bin/bloom-release -r humble sick_safetyscanners_base --override-release-repository-push-url git@github.com:revyos-ros/sick_safetyscanners_base-release.git` on `Mon, 23 Sep 2024 15:03:00 -0000`
